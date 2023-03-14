@@ -26,9 +26,7 @@ jobs:
       - name: Create Resource Group
         run: >
           as login
-          az group create
-          -l ${{ env.RESOURCE_GROUP_LOCATION }}
-          -n ${{ env.RESOURCE_GROUP_NAME }}
+          az group create --location ${{ env.RESOURCE_GROUP_LOCATION }} -n ${{ env.RESOURCE_GROUP_NAME }}
 
       - uses: azure/arm-deploy@v1
         id: infra
