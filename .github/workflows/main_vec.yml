@@ -6,7 +6,7 @@ on:
 env:
   RESOURCE_GROUP_NAME: vec00
   RESOURCE_GROUP_LOCATION: East US
-  ENV_NAME: devd4
+  ENV_NAME: vec
 
 jobs:
   deploy-infra:
