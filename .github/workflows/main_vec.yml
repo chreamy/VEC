@@ -27,7 +27,7 @@ jobs:
       - uses: azure/arm-deploy@v1
         id: infra
         with:
-          resourceGroupName: ${{ env.RESOURCE_GROUP_NAME }}
+          resourceGroupName: vec00
           template: ./infra.bicep
           parameters: env=${{ env.ENV_NAME }}
 
