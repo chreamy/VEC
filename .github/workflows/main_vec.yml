@@ -29,7 +29,7 @@ jobs:
         with:
           resourceGroupName: vec00
           template: ./infra.bicep
-          parameters: env=vec00
+          parameters: env=vec
 
       - name: Print WebApp endpoint
         run: echo https://${{ steps.infra.outputs.webAppEndpoint }}
