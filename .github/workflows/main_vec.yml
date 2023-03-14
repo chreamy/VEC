@@ -23,6 +23,11 @@ jobs:
           registry: https://vec00.azurecr.io/
           username: ${{ secrets.AzureAppService_ContainerUsername_6377b09e768743b2bb612f0b196969ce }}
           password: ${{ secrets.AzureAppService_ContainerPassword_e46820b620f941bf9657835f31413964 }}
+      - name: Create Resource Group
+        run: >
+          az group create
+          -l ${{ env.RESOURCE_GROUP_LOCATION }}
+          -n ${{ env.RESOURCE_GROUP_NAME }}
 
       - uses: azure/arm-deploy@v1
         id: infra
