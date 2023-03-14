@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: vec00.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6377b09e768743b2bb612f0b196969ce }}/image0:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./dockerfile
 
   deploy:
     runs-on: ubuntu-latest
