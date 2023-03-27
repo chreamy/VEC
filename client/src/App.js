@@ -1,41 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Home } from "./pages";
+import {Register} from "./pages"
+/*
+When it's time, we can do:
+import { Home, Page1, Page2, Page 3 } from "./pages";
+ */
 
-function App() {
-  const rows = [];
-  for (let i = 1; i <= 100; i += 10) {
-    const cells = [];
-    for (let j = i; j <= i + 9; j++) {
-      if (j <= 100) {
-        cells.push(<td key={j}>{j}</td>);
-      } else {
-        cells.push(<td key={j}></td>);
-      }
-    }
-    rows.push(<tr key={i}>{cells}</tr>);
-  }
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <table>
-      <tbody>{rows}</tbody>
-    </table>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+    <Router>
+      <Routes>
+        <Route path="/" /*element={<Layout />}*/>
+          <Route index element={<Home />} />
+          <Route path="aboutus" element={<Home />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+      </Routes>
+    </Router>
+    )
 }
 
 export default App;
