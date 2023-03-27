@@ -26,7 +26,7 @@ const connection = mongoose.connection;
 connection.once('open',()=>{console.log('mongo connected!')})
 console.log(process.env.MONGODB_URI)
 const usersRouter = require('./routes/users')
-/*server.use('/users',usersRouter)*/
+server.use('/users',usersRouter)
 
 // Start the API server
 
